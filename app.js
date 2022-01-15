@@ -9,4 +9,4 @@ app.get('/', (req,res)=>{
     res.json(manipulatorFile.getFileGames(filePath))
 })
 
-app.listen(port, ()=> {console.log('App listening at port ' + port)})
+app.listen(PORT, () => { console.log('App listening at port ' + PORT) })
