@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const manipulatorFile = require('./functions')
 
-const port = 3000
+const port = process.env.port || 3000
 const filePath = 'ListaJuegos.txt'
 
 app.get('/', (req,res)=>{
