@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { body } = require('express-validator')
 
 module.exports = {
     getFileGames: (filePath) => {
@@ -11,6 +12,8 @@ module.exports = {
                 .replace(/\r?\n|\r/g, "_")
                 .split('_')
     },
+
+    validatorWriteFileGames: [body("games").not().isEmpty().withMessage("games must exist").isArray().withMessage("games must be an array")],
 
     writeFileGames: async (filePath, objectGames) => {
         if (!fs.existsSync(filePath)) {
