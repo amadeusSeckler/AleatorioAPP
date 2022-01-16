@@ -2,11 +2,14 @@ const express = require('express')
 const app = express()
 const services = require('./functions')
 const validatorResponse = require('./helpers/validator')
+const cors = require('cors')
+
 
 const PORT = process.env.PORT || 3000
 const filePath = 'ListaJuegos.txt'
 
 app.use(express.json());
+app.use(cors())
 
 app.get('/', async (req, res) => {
     try {
