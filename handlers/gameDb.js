@@ -77,7 +77,7 @@ module.exports =
 
     deleteGameDb: async (req, res) => {
         try {
-            console.log(req.body)
+            console.log(req)
             await servicesGame.deleteGame(req.body.name)
             res.json({ success: true })
         } catch (err) {
