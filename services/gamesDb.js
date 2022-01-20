@@ -1,6 +1,24 @@
 const modelGame = require('../models/game')
 
 module.exports = {
+    findGameWithId: async (id) => {
+        try {
+            return await modelGame.findById(id) ? false : true
+        } catch (err) {
+            console.log(err)
+            console.log('Services Error')
+        }
+    },
+
+    findGameWithName: async (name) => {
+        try {
+            return await modelGame.findOne({ name: name })
+        } catch (err) {
+            console.log(err)
+            console.log('Services Error')
+        }
+    },
+
     getGames: async () => {
         try {
             return await modelGame.find()
