@@ -46,9 +46,9 @@ module.exports = {
         }
     },
 
-    deleteGame: async (name) => {
+    deleteGame: async (id) => {
         try {
-            await modelGame.deleteOne({ name: name })
+            await modelGame.findByIdAndRemove(id)
         } catch (err) {
             console.log(err)
             console.log('Service Error')

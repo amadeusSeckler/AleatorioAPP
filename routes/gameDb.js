@@ -10,6 +10,6 @@ router.put('/:idGame', [...handlerGameDb.validateEditGame, validatorResponse], h
 
 router.post('/', [...handlerGameDb.validateGameCreate, validatorResponse], handlerGameDb.createGameDb)
 
-router.delete('/', handlerGameDb.deleteGameDb)
+router.delete('/:idGame', handlerGameDb.deleteGameDb)
 
 module.exports = router
