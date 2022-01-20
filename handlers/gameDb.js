@@ -23,10 +23,29 @@ module.exports =
 
             const gameObject = {
                 name: req.body.name,
-                url: req.body.url
+                url: req.body.url,
+                description: req.body.description
             }
 
             await servicesGame.createGame(gameObject)
+
+            res.json({ success: true })
+        } catch (err) {
+            console.log(err)
+            console.log('Handler Error')
+            res.sendStatus(500)
+        }
+    },
+
+    editGameDb: async (req, res) => {
+        try {
+            const parametersEdit = {
+                name: req.body.name,
+                url: req.body.url,
+                description: req.body.description
+            }
+
+            await servicesGame.editGame(req.params['idGame'], parametersEdit)
 
             res.json({ success: true })
         } catch (err) {

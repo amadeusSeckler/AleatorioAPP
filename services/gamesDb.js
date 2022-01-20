@@ -19,6 +19,15 @@ module.exports = {
         }
     },
 
+    editGame: async (id, newGame) => {
+        try {
+            await modelGame.findByIdAndUpdate(id, newGame)
+        } catch (error) {
+            console.log(err)
+            console.log('Service Error')
+        }
+    },
+
     deleteGame: async (name) => {
         try {
             await modelGame.deleteOne({ name: name })
