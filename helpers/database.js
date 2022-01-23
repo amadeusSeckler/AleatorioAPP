@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const userDb = 'adminMongo'
-const passwordDb = 'passMongo'
-const nameDb = 'aleatorioAPP'
+const userDb = process.env.DB_USER
+const passwordDb = process.env.DB_PASS
+const nameDb = process.env.DB_NAME
 
 module.exports = {
     dbConnect: async () => {
