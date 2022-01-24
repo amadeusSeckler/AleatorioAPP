@@ -6,7 +6,7 @@ const sendMail = async (req, res) => {
             originMail: req.body.origin,
             targetMails: [process.env.MAIL_1, process.env.MAIL_2],
             subjectMail: req.body.subject,
-            textMail: req.body.text
+            textMail: req.body.message
         }
 
         await serviceMail(informationMail)
